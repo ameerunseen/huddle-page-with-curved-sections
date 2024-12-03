@@ -1,0 +1,491 @@
+/* Custom Properties */
+:root {
+    --color-pink: hsl(322, 100%, 66%);
+    --color-light-pink: hsl(321, 100%, 78%);
+    --color-dark-cyan: hsl(192, 100%, 9%);
+    --color-pale-blue: hsl(207, 100%, 98%);
+}
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--color-dark-cyan);
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header Styles */
+.header {
+    padding: 2rem 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 24px;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: var(--color-pink);
+    color: white;
+    box-shadow: 0 4px 10px rgba(255, 82, 193, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-light-pink);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    color: var(--color-pink);
+    border: 1px solid var(--color-pink);
+    padding: 0.5rem 2rem;
+}
+
+.btn-secondary:hover {
+    color: var(--color-light-pink);
+    border-color: var(--color-light-pink);
+    background-color: rgba(255, 82, 193, 0.05);
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Section Animations */
+section {
+    animation: fadeIn 1s ease-in;
+}
+
+.feature {
+    animation: slideIn 0.5s ease forwards;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.hero-image {
+    margin-top: 4rem;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Stats Section */
+.stats {
+    padding: 4rem 0;
+    margin-bottom: 8rem;
+}
+
+.stats-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4rem;
+}
+
+.stat-item {
+    margin: 1rem;
+}
+
+.stat-item h2 {
+    font-size: 4rem;
+    margin: 0.5rem 0;
+}
+
+.stat-item p {
+    font-size: 1rem;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.stat-item img {
+    width: 40px;
+}
+
+/* Feature Sections */
+.feature {
+    padding: 4rem 0;
+    position: relative;
+    margin: 8rem 0;
+}
+
+.feature .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.feature-content {
+    max-width: 500px;
+}
+
+.feature-content h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.feature-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.grow-together, .your-users {
+    background-color: var(--color-pale-blue);
+}
+
+/* Curved Sections */
+.curve-top, .curve-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: 100% 150px;
+}
+
+.curve-top {
+    top: 0;
+    transform: translateY(-100%);
+}
+
+.curve-bottom {
+    bottom: 0;
+    transform: translateY(100%);
+}
+
+.grow-together .curve-top {
+    background-image: url('images/bg-section-top-desktop-1.svg');
+}
+
+.grow-together .curve-bottom {
+    background-image: url('images/bg-section-bottom-desktop-1.svg');
+}
+
+.your-users .curve-top {
+    background-image: url('images/bg-section-top-desktop-2.svg');
+}
+
+.your-users .curve-bottom {
+    background-image: url('images/bg-section-bottom-desktop-2.svg');
+}
+
+/* CTA Section */
+.cta {
+    text-align: center;
+    padding: 8rem 0;
+    margin-bottom: 8rem;
+}
+
+.cta h1 {
+    margin-bottom: 2rem;
+    font-size: 35px;
+}
+
+.cta .btn-primary {
+    animation: pulse 1.5s infinite;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-dark-cyan);
+    color: white;
+    padding: 4rem 0;
+    position: relative;
+    border: none;
+    margin-top: -1px;
+}
+
+.footer .curve-top {
+    background-image: url('images/bg-footer-top-desktop.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform: translateY(-99%);
+    background-position: bottom;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.footer-info, .footer-newsletter {
+    max-width: 400px;
+}
+
+.footer-info h2 {
+    display: inline;
+    font-size: 45px;
+}
+
+.footer-logo {
+    vertical-align: sub;
+}
+
+.main-footer-logo {
+    margin: 20px 0;
+}
+
+.contact p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-light-pink);
+    transform: scale(1.1);
+}
+
+.footer-newsletter {
+    margin-top: 2rem;
+}
+
+.footer-newsletter h3 {
+    margin-bottom: 0.7rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 24px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+    border: none;
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--color-pink);
+    box-shadow: 0 0 0 2px rgba(255, 82, 193, 0.2);
+}
+
+.newsletter-form button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: var(--color-pink);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--color-light-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 82, 193, 0.3);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .stats {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .stats-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-item {
+        margin: 1rem 0;
+    }
+
+    .feature .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .feature-content {
+        margin: 0 auto;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-newsletter {
+        order: 1;
+    }
+
+    .footer-info {
+        order: 2;
+    }
+
+    .footer-info, .footer-newsletter {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .footer {
+        padding: 120px 0 40px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .grow-together .curve-top {
+        background-image: url('images/bg-section-top-mobile-1.svg');
+    }
+
+    .grow-together .curve-bottom {
+        background-image: url('images/bg-section-bottom-mobile-1.svg');
+    }
+
+    .your-users .curve-top {
+        background-image: url('images/bg-section-top-mobile-2.svg');
+    }
+
+    .your-users .curve-bottom {
+        background-image: url('images/bg-section-bottom-mobile-2.svg');
+    }
+
+    .footer .curve-top {
+        background-image: url('images/bg-footer-top-mobile.svg');
+        height: 53px;
+    }
+
+    .curve-top, .curve-bottom {
+        background-size: 100% 100%;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .footer-newsletter h3 {
+        font-size: 24px;
+    }
+
+    .footer-newsletter button,
+    .footer-newsletter input {
+        padding: 0.4rem;
+        font-size: 0.8rem;
+    }
+}
